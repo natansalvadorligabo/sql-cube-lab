@@ -1,7 +1,11 @@
 /* Experimental banner theme. The previous interface is saved in commit 4527764. */
 header>a[href="#compare"]{margin-left:auto;color:var(--muted);font-size:12px}
 #theme-toggle{white-space:nowrap;font-size:12px;min-width:88px}
+.github-link{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--muted);padding:8px 10px;border:1px solid var(--line);border-radius:8px}
+.github-link:hover{color:var(--ink);border-color:#b99b39;background:var(--purple-light)}
+.github-link svg{width:16px;height:16px;fill:currentColor}
 @media(max-width:700px){header{gap:12px}header>a[href="#compare"]{font-size:10px;max-width:110px}#theme-toggle{padding:8px;min-width:72px}}
+@media(max-width:700px){.github-link{padding:8px}.github-link span{display:none}}
 :root{color-scheme:dark;--bg:#101115;--ink:#f1f0e9;--muted:#a3a4ac;--line:#2a2c33;--purple:#f5da52;--purple-light:#302d1b;--green:#d4d6da;--orange:#ef5263}
 body{background:radial-gradient(ellipse at 8% 40%,#20201555,transparent 45%),#101115}
 header{background:#101115;border-bottom-color:#292a30;height:72px}
