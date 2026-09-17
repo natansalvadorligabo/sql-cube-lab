@@ -1,0 +1,87 @@
+/* Shared, responsive working area: controls, drawing and query results. */
+body main{max-width:1920px;padding:0 24px}
+body header{height:60px;padding:0 24px}
+body .intro{min-height:0;margin:20px 0 12px;padding:0;background:none;border:0;border-radius:0;overflow:visible}
+body .intro:before{display:none}
+html body .intro h1{font-size:28px;letter-spacing:-1px;margin:0;color:var(--ink)}
+[data-theme] body .intro h1{color:var(--ink)}
+body .intro p{font-size:12px;color:var(--muted);margin:5px 0 0}
+body .dimension-note{padding:10px 14px;margin:0 0 14px;font-size:11px}
+.dimension-note summary{cursor:pointer;color:var(--ink);line-height:1.6}
+body .lab-layout{display:flex;flex-direction:column;gap:16px;align-items:stretch}
+.operation-bar{display:flex;align-items:center;gap:20px;padding:10px 14px;position:sticky;top:0;z-index:5}
+.operation-bar #modes{margin:0;min-width:300px}
+.operation-bar .help{margin:0;font-size:12px}
+.dashboard{display:grid;grid-template-columns:240px minmax(300px,1fr) minmax(365px,.95fr);gap:14px;align-items:stretch}
+@media(min-width:1151px){
+ .dashboard{height:clamp(480px,calc(100dvh - 295px),680px)}
+ body .dashboard .controls{overflow:auto}
+ body .dashboard .visual{display:flex;flex-direction:column}
+ body .dashboard .visual .canvas-wrap{flex:1;min-height:240px;height:auto}
+ body .dashboard .result-panel .table-scroll{height:0;flex:1;min-height:0}
+}
+body .dashboard .controls,body .dashboard .visual,body .dashboard .result-panel{position:static;grid-column:auto;grid-row:auto;min-width:0;margin:0}
+body .dashboard .controls{padding:16px}
+body .controls h2{font-size:16px;margin-bottom:16px}
+.controls>.eyebrow{font-size:9px}
+body .dimension{padding:8px;gap:7px}
+body .dimension .axis{width:22px;height:26px;flex-shrink:0}
+body .dimension small{font-size:9px}
+body .collapse-steps button{padding:7px 8px}
+body .selection-card{padding:12px;margin-top:12px}
+body .selection-card>strong{font-size:25px}
+body .visual .panel-top,body .result-panel .panel-top{padding:16px 16px 0}
+body .visual h2,body .result-panel h2{font-size:16px}
+body .visual .canvas-wrap{height:clamp(250px,calc(100dvh - 385px),410px)}
+body .visual .insight{min-height:0;margin:0 12px 12px;padding:12px}
+body .visual .scene-key{left:16px;top:16px}
+body .result-panel{display:flex;flex-direction:column}
+body .result-panel>.help{margin:10px 16px;font-size:10px}
+body .result-panel .table-scroll{height:clamp(245px,calc(100dvh - 400px),420px);max-height:none;flex:1;min-height:0;overflow:auto;scrollbar-gutter:stable}
+body .result-panel th,body .result-panel td{padding:8px;font-size:10px}
+body .result-panel .table-foot{padding:10px 14px;font-size:9px}
+body .sql-panel{min-width:0;display:grid;grid-template-columns:1fr 1fr;align-items:start}
+body .sql-panel .panel-top{grid-column:1;padding:16px 20px 0}
+body .sql-panel .sql-tabs{grid-column:1;grid-row:2;margin:16px 20px 0}
+body .sql-panel pre{grid-column:2;grid-row:1 / 5;min-height:0;max-height:300px;font-size:11px;padding:16px 20px;margin:0;height:100%}
+body .sql-panel .sql-note{grid-column:1;margin:12px 20px 0}
+body .sql-panel .text-button{grid-column:1;justify-self:start}
+body #compare{padding:16px 0 0;scroll-margin-top:75px}
+body .compare-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+body .compare-card p{min-height:0}
+body .sets-panel{flex-direction:row;align-items:center}
+body .page-footer{margin-top:24px;gap:16px;padding:16px 0;min-height:85px}
+@media(min-width:1600px){.dashboard{grid-template-columns:270px minmax(450px,1.1fr) minmax(450px,1fr)}}
+@media(max-width:1150px) and (min-width:761px){
+ .dashboard{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+ body .dashboard .result-panel{height:480px}
+ body .dashboard .result-panel .table-scroll{height:0;flex:1}
+ body .dashboard .controls{grid-column:1 / -1;display:grid;grid-template-columns:1.4fr 1fr;gap:8px 20px}
+ .controls>.eyebrow,.controls>h2,.controls>.help{display:none}
+ .controls>.label-row{grid-column:1;grid-row:1}
+ .controls>#dimensions{grid-column:1;grid-row:2 / 5;display:flex;gap:6px}
+ body .dimension{flex-wrap:wrap;align-content:start;margin:0}
+ body .dimension small{display:none}
+ .controls>.selection-card{grid-column:2;grid-row:1 / 5;margin:0}
+ .controls>.collapse-steps{grid-column:1;margin:0}
+ .controls>.check,.controls>.restriction{grid-column:1}
+ body .visual .canvas-wrap{height:300px}
+}
+@media(max-width:760px){
+ body main{padding:0 12px}body header{padding:0 12px}
+ body .intro h1{font-size:25px}body .intro{margin-top:16px}
+ .operation-bar{flex-direction:column;align-items:stretch;gap:6px;padding:8px}
+ .operation-bar #modes{min-width:0}.operation-bar .help{font-size:10px}
+ .dashboard{grid-template-columns:minmax(0,1fr)}
+ body .dashboard .visual{order:1}body .dashboard .controls{order:0}body .dashboard .result-panel{order:2}
+ body .controls>.eyebrow,body .controls>h2{display:none}
+ #dimensions{display:flex;gap:6px}.dimension{flex-wrap:wrap;align-content:start}
+ body .dimension small{display:none}.dimension .switch{margin-left:auto}
+ body .controls .selection-card{margin-top:8px}
+ body .visual .canvas-wrap{height:300px}
+ body .result-panel .table-scroll{height:350px;flex:auto}
+ body .sql-panel{display:block}body .sql-panel pre{max-height:none;margin-top:12px}
+ body .compare-grid{grid-template-columns:1fr}body .sets-panel{flex-direction:column;align-items:stretch}
+ body .page-footer{flex-wrap:wrap}body .page-footer>.brand{display:block}
+ body .page-footer>span:nth-child(2){display:none}
+}

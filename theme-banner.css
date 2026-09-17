@@ -1,0 +1,121 @@
+/* Experimental banner theme. The previous interface is saved in commit 4527764. */
+header>a[href="#compare"]{margin-left:auto;color:var(--muted);font-size:12px}
+#theme-toggle{white-space:nowrap;font-size:12px;min-width:88px}
+@media(max-width:700px){header{gap:12px}header>a[href="#compare"]{font-size:10px;max-width:110px}#theme-toggle{padding:8px;min-width:72px}}
+:root{color-scheme:dark;--bg:#101115;--ink:#f1f0e9;--muted:#a3a4ac;--line:#2a2c33;--purple:#f5da52;--purple-light:#302d1b;--green:#d4d6da;--orange:#ef5263}
+body{background:radial-gradient(ellipse at 8% 40%,#20201555,transparent 45%),#101115}
+header{background:#101115;border-bottom-color:#292a30;height:72px}
+.brand{color:#f6f3e7}.logo{color:#f5da52}.brand-dot{color:#ef304d}
+header>a:last-child{color:#d2d1cb}.header-note{color:#8e8e97;letter-spacing:2px}
+main{max-width:1500px}
+body .intro{position:relative;isolation:isolate;min-height:290px;margin:24px 0;padding:30px 32px;border:1px solid #25272d;border-radius:16px;background:#101115;overflow:hidden}
+.intro:before{content:'';position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,#101115 5%,#101115f5 30%,#10111580 52%,transparent 72%)}
+body .intro h1{font-size:clamp(34px,3.4vw,49px);letter-spacing:-2px;font-weight:600;margin:16px 0}
+body .intro p{color:#b6b5bb;font-size:13px;line-height:1.85}
+.intro code{background:#28271d;color:#f1da6c;border:1px solid #3b3825}
+.intro-stat{display:none}.intro .eyebrow{color:#f0d355;font-size:9px;letter-spacing:2px}
+.dimension-note{background:#191a1e;border:1px solid #303035;border-left:3px solid #f5da52;color:#aaaab2;border-radius:10px}
+.dimension-note>strong{color:#efe8c7}.dimension-note p strong{color:#e3dfd0}.dimension-note code{color:#f0d967}
+.panel{background:#18191e;border-color:#2d2e35;box-shadow:0 12px 40px #00000012}
+.panel-top .eyebrow,.controls>.eyebrow{color:#9d998b}
+h2{color:#efeee7}button{background:#202126;border-color:#33343b;color:#dededc}button:hover{background:#343123;border-color:#74683b}
+.canvas-wrap{background:radial-gradient(ellipse at 50% 50%,#2b281b77,transparent 70%),#15161b}
+.badge{background:#302c1b;color:#f7df70;border:1px solid #4b4124}
+.scene-tools button{background:#222329ed;color:#ddd9c9;border-color:#414039}
+.canvas-hint{color:#9999a3}.scene-key{color:#bab6a7}
+.insight{background:#242218;border-color:#423b24}.insight strong{color:#e9ddb5}.insight p{color:#b6b09e}
+.segmented{background:#111216;border:1px solid #303139}.segmented button{color:#a6a6ae}.segmented button.active{background:#f5da52;color:#25220e;box-shadow:0 2px 15px #f5da5215;font-weight:700}
+.dimension{background:#1d1e23;border-color:#303139}.dimension[aria-pressed=true]{border-color:#4b442b;background:#24231d}
+.dimension .axis{background:#34301b;color:#f5da52}.dimension:nth-child(2) .axis{background:#303137;color:#e2e3e7}.dimension:nth-child(3) .axis{background:#3b2329;color:#fa7788}
+.switch{background:#41424b}.switch:after{background:#f7f2dc}.dimension[aria-pressed=true] .switch:after{background:#282310}
+.collapse-steps .active{background:#35301b;border-color:#8d7934;color:#ffe574}
+.selection-card{background:#111216;border-color:#34312a}.selection-card>strong{color:#ffe473}
+.restriction{background:#33261c;color:#e1b484}
+.sql-tabs button{background:transparent}.sql-tabs button:hover{background:transparent;color:#f5da52}
+pre{background:#121318;color:#cbc9bb}pre .kw{color:#f4d75a}
+.text-button{background:transparent;color:#e4ce70}
+th{background:#202127;color:#b4b4bd}th,td{border-color:#2a2b32}tbody tr.selected{background:#34301e;color:#ffe479}tbody tr:hover{background:#2d2a21}
+.compare-card{background:#191a1f}.compare-card.active{background:#272419;border-color:#9c863d;box-shadow:0 0 0 2px #f5da520b}
+.mini-diagram{color:#c0a64d}.compare-card h3{color:#f0eee5}.compare-card h3 span{color:#dbbf55}
+.sets-panel{background:#18191e;border-color:#303139}#sets button.active{background:#3b331c;color:#ffe57c;border-color:#a38a36}
+.page-footer .brand{color:#e4d694}.page-footer a:hover{color:#ffe473}
+button:focus-visible,a:focus-visible,canvas:focus-visible,input:focus-visible{outline-color:#ffe36c}
+@media(max-width:700px){body .intro{padding:22px;min-height:330px;background-position:65% center}.intro:before{background:linear-gradient(90deg,#101115fa,#101115d9 58%,#10111580)}body .intro h1{font-size:37px}.intro .eyebrow{max-width:230px;line-height:1.8}.dimension-note{padding:16px}.dimension-note p{font-size:11px}}
+/* Light companion: warm paper, graphite text and the same yellow/red identity. */
+:root[data-theme="light"]{color-scheme:light;--bg:#f7f6f1;--ink:#292a2e;--muted:#706f73;--line:#e2dfd5;--purple:#846300;--purple-light:#faf0c8;--green:#666a73;--orange:#bc354a}
+[data-theme="light"] body{background:radial-gradient(ellipse at 8% 40%,#f5df7820,transparent 45%),#f7f6f1}
+[data-theme="light"] header{background:#fffefa;border-bottom-color:#e3dfd2}
+[data-theme="light"] .brand{color:#26272d}
+[data-theme="light"] .logo{color:#b28a10}
+[data-theme="light"] .header-note{color:#74716a}
+/* The original banner keeps its own dark background in both themes. */
+[data-theme="light"] .intro h1{color:#f6f3e7}
+[data-theme="light"] .intro h1 em{color:#f5da52}
+[data-theme="light"] .intro .eyebrow>span{background:#f5da52}
+[data-theme="light"] .dimension-note{background:#fffbeb;border-color:#e6dbb0;border-left-color:#d7b537;color:#6d6651}
+[data-theme="light"] .dimension-note>strong,[data-theme="light"] .dimension-note p strong{color:#514626}
+[data-theme="light"] .dimension-note code{color:#826000}
+[data-theme="light"] .panel{background:#fffefa;border-color:#e2dfd5;box-shadow:0 8px 28px #4d401008}
+[data-theme="light"] .panel-top .eyebrow,[data-theme="light"] .controls>.eyebrow{color:#81775e}
+[data-theme="light"] h2{color:#2c2c30}
+[data-theme="light"] button{background:#fffefa;border-color:#ddd8c9;color:#444239}
+[data-theme="light"] button:hover{background:#faf1ce;border-color:#b6a05a}
+[data-theme="light"] .canvas-wrap{background:radial-gradient(ellipse at center,#fcf6df,transparent 70%),#fffefa}
+[data-theme="light"] .badge{background:#faf0c8;color:#785b07;border-color:#e7d796}
+[data-theme="light"] .scene-tools button{background:#fffefaed;color:#62552c;border-color:#dcd2b6}
+[data-theme="light"] .canvas-hint,[data-theme="light"] .scene-key{color:#787266}
+[data-theme="light"] .insight{background:#fbf5df;border-color:#e9dcab}
+[data-theme="light"] .insight strong{color:#51451e}
+[data-theme="light"] .insight p{color:#766b4f}
+[data-theme="light"] .segmented{background:#efede5;border-color:#e0dbcd}
+[data-theme="light"] .segmented button{background:transparent;color:#696557;border-color:transparent}
+[data-theme="light"] .segmented button.active{background:#f5da52;color:#30280c}
+[data-theme="light"] .dimension{background:#fffefa;border-color:#e3dfd3}
+[data-theme="light"] .dimension[aria-pressed=true]{background:#fdf9e9;border-color:#dcd0a4}
+[data-theme="light"] .dimension .axis{background:#f4e8b5;color:#7b5e08}
+[data-theme="light"] .dimension:nth-child(2) .axis{background:#eaeaec;color:#5b606a}
+[data-theme="light"] .dimension:nth-child(3) .axis{background:#fae5e9;color:#b72f49}
+[data-theme="light"] .switch{background:#d7d4ca}
+[data-theme="light"] .dimension[aria-pressed=true] .switch{background:#d7b638}
+[data-theme="light"] .dimension[aria-pressed=true] .switch:after{background:#fffefa}
+[data-theme="light"] .collapse-steps .active{background:#f8edbc;border-color:#bda044;color:#755506}
+[data-theme="light"] .selection-card{background:#f6f3e9;border-color:#e2dbc6}
+[data-theme="light"] .selection-card>strong{color:#806000}
+[data-theme="light"] .restriction{background:#fcf0dc;color:#8d622c}
+[data-theme="light"] .sql-tabs button{background:transparent;color:#726e60}
+[data-theme="light"] .sql-tabs .active{color:#806000}
+[data-theme="light"] pre{background:#f7f5ed;color:#52515c}
+[data-theme="light"] pre .kw{color:#8a6200}
+[data-theme="light"] .text-button{background:transparent;color:#806000}
+[data-theme="light"] th{background:#f2f0e7;color:#716b5d}
+[data-theme="light"] th,[data-theme="light"] td{border-color:#e8e3d5}
+[data-theme="light"] tbody tr.selected{background:#f9edb8;color:#70520a}
+[data-theme="light"] tbody tr:hover{background:#fcf4d7}
+[data-theme="light"] .cell-pick{color:inherit}
+[data-theme="light"] .compare-card{background:#fffefa}
+[data-theme="light"] .compare-card.active{background:#fdf8e4;border-color:#c5a847;box-shadow:0 0 0 2px #eedb921e}
+[data-theme="light"] .mini-diagram{color:#a68a31}
+[data-theme="light"] .compare-card h3{color:#33312a}
+[data-theme="light"] .compare-card h3 span{color:#91731d}
+[data-theme="light"] .sets-panel{background:#fffefa;border-color:#e2dfd5}
+[data-theme="light"] #sets button.active{background:#f7e9af;color:#70520a;border-color:#b99b39}
+[data-theme="light"] .page-footer .brand{color:#8a7127}
+[data-theme="light"] .page-footer a:hover{color:#70520a}
+[data-theme="light"] button:focus-visible,[data-theme="light"] a:focus-visible,[data-theme="light"] canvas:focus-visible,[data-theme="light"] input:focus-visible{outline-color:#a17c0c}
+/* Complete SQL results: aggregate rows and visual selection are separate cues. */
+.result-panel .table-scroll{max-height:460px}
+.row-kind{display:block;font-size:9px;margin-top:4px;opacity:.8}
+.sql-null{font-family:monospace;font-size:10px;font-style:italic;opacity:.7}
+.result-panel tbody tr.subtotal{background:#20362b;color:#b5e6c7}
+.result-panel tbody tr.grand-total{background:#183741;color:#bceafa;font-weight:700}
+.result-panel tbody tr.current-level td:first-child{box-shadow:inset 3px 0 #e1bd38}
+.result-panel tbody tr.selected{background:#443a1c;color:#ffe479}
+.result-panel tbody tr:hover{filter:brightness(1.12)}
+.result-panel .cell-pick{color:inherit}
+.result-panel th,.result-panel td{padding:10px 12px}
+.result-panel .table-foot{gap:12px;line-height:1.6;flex-wrap:wrap}
+[data-theme="light"] .result-panel tbody tr.subtotal{background:#e4f4e6;color:#285e38}
+[data-theme="light"] .result-panel tbody tr.grand-total{background:#dceff7;color:#225b70}
+[data-theme="light"] .result-panel tbody tr.selected{background:#f9edb8;color:#70520a}
+[data-theme="light"] .result-panel tbody tr:hover{filter:brightness(.97)}
+@media(max-width:700px){.result-panel th,.result-panel td{padding:9px 7px;font-size:10px}}
